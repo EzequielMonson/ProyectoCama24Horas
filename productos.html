@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SleepCraft</title>
     <link rel="stylesheet" href="/templates/styles.css">
-
+    <script src="/templates/scripts.js"></script>
 </head>
 <body>
     <div class="contenedor">
@@ -26,23 +26,30 @@
             <li><button>Almohada</button></li>
         </ul>
     </article>
+    <main>
+    <label for="opcion">Opciones: </label> <br>
     <section>
         <label>
-            <input type="radio" name="opcion" value="opcion1">
+            <input type="radio" id="opcion1" name="opcion" value="opcion1">
             Opción 1
         </label>
         <br>
-        
         <label>
-            <input type="radio" name="opcion" value="opcion2">
+            <input type="radio" id="opcion2" name="opcion" value="opcion2">
             Opción 2
         </label>
         <br>
-        
         <label>
-            <input type="radio" name="opcion" value="opcion3">
+            <input type="radio" id="opcion3" name="opcion" value="opcion3">
             Opción 3
         </label>
+        <br>
+        <label for="inputAlto">Alto: </label><input type="number" id="inputAlto" name="alto"><br>
+        <label for="inputAncho">Ancho: </label><input type="number" id="inputAncho" name="ancho"><br>
+        <label id="labelPrecioTotal">Precio :</label>
+        <button onclick="CalcularPrecioTotal()">calcular</button>
     </section>
+    <a href="#" class="btn-agregar">Agregar al carrito</a>
+</main>
 </body>
 </html>
