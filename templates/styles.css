@@ -1,3 +1,23 @@
-.header-nav ul {
+*{
+    box-sizing: border-box;
+}
+
+
+
+/* Header */
+
+.header-nav ul{
     list-style: none;
+}
+
+.header-nav li {
+    font-weight: 700;
+    padding: 0.5rem;
+    margin: 0 0.5rem 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: saddlebrown;
+    font-size: 22px;
 }
