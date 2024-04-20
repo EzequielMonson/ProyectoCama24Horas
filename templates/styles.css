@@ -1,16 +1,32 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background-color: #84b6f4;
+    margin: 0;
+}
 
 
+/* header */
 
-/* Header */
+header{
+    /* border: 2px #000000 solid; */
+    background-color: #005187;
+    min-height: 120px;
+}
 
+/* ARREGLAR ESTO */
+.header-nav {
+    display: inline-flex;    
+    padding-left: 220px;
+    padding-top: 50px;
+}
 .header-nav ul{
     list-style: none;
 }
 
 .header-nav li {
+    display: inline-flex;
     font-weight: 700;
     padding: 0.5rem;
     margin: 0 0.5rem 0;
@@ -18,6 +34,34 @@
 
 .header-nav a {
     text-decoration: none;
-    color: saddlebrown;
+    color: white;
     font-size: 22px;
 }
+
+
+/* seccion de compra */
+
+button {
+    display: grid; 
+    border-color: #005187;
+    background-color: #005187;
+    color: white;
+    font-weight: 700;
+    padding: 30px 150px;
+    border-radius: 5px;
+}
+
+.botones{
+    background-color: #005187;
+}
+.botones ul {
+    list-style: none;
+    margin: 0;
+}
+.botones li {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+}
+
+
+
