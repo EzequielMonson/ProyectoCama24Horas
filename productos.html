@@ -5,44 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SleepCraft</title>
     <link rel="stylesheet" href="/templates/styles.css">
-
+    <script src="/templates/scripts.js"></script>
 </head>
 <body>
-    <div class="contenedor">
-        <header class="item header">
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="/contacto.html">Contacto</a></li> 
-                    <li><a href="/index.html">Main</a></li>
-                    <li><a href="">Productos</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>  
-    <article>
-        <ul>
-            <li><button>Cama</button></li>
-            <li><button>Colchón</button></li>
-            <li><button>Almohada</button></li>
-        </ul>
-    </article>
-    <section>
-        <label>
-            <input type="radio" name="opcion" value="opcion1">
-            Opción 1
-        </label>
-        <br>
-        
-        <label>
-            <input type="radio" name="opcion" value="opcion2">
-            Opción 2
-        </label>
-        <br>
-        
-        <label>
-            <input type="radio" name="opcion" value="opcion3">
-            Opción 3
-        </label>
-    </section>
+    <header class="header">
+        <nav class="header-nav">
+            <ul>
+                <li><a href="/contacto.html">Contacto</a></li> 
+                <li><a href="/index.html">Main</a></li>
+                <li><a href="">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <ul>
+                <li><button>Cama</button></li>
+                <li><button>Colchón</button></li>
+                <li><button>Almohada</button></li>
+            </ul>
+        </article>
+        <label for="opcion">Opciones: </label> <br>
+        <section>
+            <label>
+                <input type="radio" id="opcion1" name="opcion" value="opcion1">
+                Opción 1
+            </label>
+            <br>
+            <label>
+                <input type="radio" id="opcion2" name="opcion" value="opcion2">
+                Opción 2
+            </label>
+            <br>
+            <label>
+                <input type="radio" id="opcion3" name="opcion" value="opcion3">
+                Opción 3
+            </label>
+            <br>
+            <label for="inputAlto">Alto: </label><input type="number" id="inputAlto" name="alto"><br>
+            <label for="inputAncho">Ancho: </label><input type="number" id="inputAncho" name="ancho"><br>
+            <label id="labelPrecioTotal">Precio :</label>
+            <button onclick="CalcularPrecioTotal()">calcular</button>
+        </section>
+        <a href="#" class="btn-agregar">Agregar al carrito</a>
+    </main>
 </body>
 </html>
