@@ -11,7 +11,8 @@
 <body>
     <div class="contenedor">
         <header class="item header">
-            <nav class="header-nav"> 
+            <nav class="header-nav">
+                <img src="/templates/img/BEDSALE.png" alt="" class="logo"> 
                 <ul class="nav-list">
                     <li><a href="/contacto.html">Contacto</a></li> 
                     <li><a href="/index.html">Main</a></li>
@@ -31,39 +32,20 @@
                 </ul>
             </div>
         </div>
-    </div>  
+    </div>   
     <article class="botones">
         <ul>
-            <li><button class="boton-con-imagen"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVR4nO3Yz6sOURzH8VeU61ddSmLBRlH2sqKs7GXH8voDpNjKxvUjdn5kSaxF2aEUyUpxs7FkQ0/yY4Hco6lD43meiXnmTnPmcd71qZnpzHc+n74z55yGTCaTyWQy08kKnMFbhMT1BvPR8wjzCRgMNXV6XJA+dCIMqfA8QuipRujaUA7y33XkHS5hDnuwCesxE++bieebsTeOu4z3LdcKdYLcwazJKO6721KtUDfIFs3Y2lKtUDfIUtBGrZCDJELosiOdBVnEPewfM2YNduEQjuI8ruM+XuJ1VDFdDvCpVPdzvDYojVvAA9zABRzDYezG2jHP34fb+PG3II+ws3RtFQ7EuXxhqEDbWsQrXMVBrC752o6HVUFOYHk83oYr+NjBSh0qVHT0GnZEj8twvOodXImz+JaA8VCh77g41KE/2IAnCRgN/6hn2DiuE48TMBdq6mn0/puTCZiaVKfKG7LyNNk3fYk7ZkcSMNNUc0WQWwkYaaqbRZAXCRhpqudFkA8JGGmqgbjAhJ7ra9XimOmSMCXStYEcRO6I/n4j5xr8HVxKZqOXiYOkEOIX65oESY2QgyRGmPqO/AQmwya75iPY4QAAAABJRU5ErkJggg==">Cama</button></li>
-            <li><button class="boton-con-imagen"><img id="img-colchon" src="https://icon-library.com/images/mattress-icon/mattress-icon-0.jpg" alt="">Colchón</button></li>
-            <li><button class="boton-con-imagen"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVR4nO2Z34sOURjHP+wiqy2vQuJmy4+b5VK0ruSWLVxRyqUrpYSkVlJCLtgLi/YPUJRiSy9ly6/Nqt2oLbyRwlpxIVmLfY8Oz3s6xsy845R9n9F869v7TueZM59vM+97zpwDhQoVKpRHzQZOAMNABegHzgBbgFKj4fjFYFm6ha0irMeF3ekkYBL8HbgLdAEdQHPMhRYBncAR4CJQBm4BgxHflLZLUtcL9ACngGPAIWCf+Ki0DwpDEp+9AU7DKYU1fwJ2A9PlnFZgFzAAVDOc/6885Ae5V6f4GbBSamcBe4H3DYQ3nu/4QXpSCkfk0bFqz3j3ptJn/SA7EoreAIulZgPwUQG4idiyOy1PKFov7euALwqgTYwtu9O0hB/sMqANGFUAbGJcFXan5oTCCWBcAbBJcVN0HDA59QI/yFoFQKFe4wfZpgAo1Jbd6aACoFAf8IOcVwAUajuYO5UVAIX6uh9kSAFQqB/6QSoKgEL91A/yTgFQqN/6QbTOo0wGf/4vg7xSABTq536QBwqAQm1ftZ0uKAAK9RU/yE4FQKE+5weZX2fJRdskcbt3vJ+IriqANBk8T3hfy7FduPtN7Tm5K5uFt0uOVxGjwwpATR3fFtY5wAugJS5Ik8wmTU5epjriQiyVT5vwhgJYk+LRtMV1O7Dske8z5BmcVABtsqww1lSSH/qkhKmtFXUqADYJtqyro0G2Ror6gIXACgXAJsUD3u7AT/XGFI3nZFa80Q/ySAFQqO2mkdNLBUChtq/pTtcyLBZXZDutT+rLskFkt8aeSPsY8EHWjJP6mpCaMTlnRPqw/Vlflv77ZYOp+jez3zbprNb4FXgMnAY2yTZbiFrkH7GUNAJnUKswdAvTN4/zvrD/IXvBJdEVbmWaKfBzGw1SqFAhpl4/AG1GYcSx2G9oAAAAAElFTkSuQmCC">Almohada</button></li>
+            <li><button class="boton-con-imagen" id="agregarOpcionesCama"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVR4nO3Yz6sOURzH8VeU61ddSmLBRlH2sqKs7GXH8voDpNjKxvUjdn5kSaxF2aEUyUpxs7FkQ0/yY4Hco6lD43meiXnmTnPmcd71qZnpzHc+n74z55yGTCaTyWQy08kKnMFbhMT1BvPR8wjzCRgMNXV6XJA+dCIMqfA8QuipRujaUA7y33XkHS5hDnuwCesxE++bieebsTeOu4z3LdcKdYLcwazJKO6721KtUDfIFs3Y2lKtUDfIUtBGrZCDJELosiOdBVnEPewfM2YNduEQjuI8ruM+XuJ1VDFdDvCpVPdzvDYojVvAA9zABRzDYezG2jHP34fb+PG3II+ws3RtFQ7EuXxhqEDbWsQrXMVBrC752o6HVUFOYHk83oYr+NjBSh0qVHT0GnZEj8twvOodXImz+JaA8VCh77g41KE/2IAnCRgN/6hn2DiuE48TMBdq6mn0/puTCZiaVKfKG7LyNNk3fYk7ZkcSMNNUc0WQWwkYaaqbRZAXCRhpqudFkA8JGGmqgbjAhJ7ra9XimOmSMCXStYEcRO6I/n4j5xr8HVxKZqOXiYOkEOIX65oESY2QgyRGmPqO/AQmwya75iPY4QAAAABJRU5ErkJggg==">Cama</button></li>
+            <li><button class="boton-con-imagen" id="agregarOpcionesColchon"><img id="img-colchon" src="https://icon-library.com/images/mattress-icon/mattress-icon-0.jpg" alt="">Colchón</button></li>
+            <li><button class="boton-con-imagen" id="agregarOpcionesAlmohada"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqUlEQVR4nO2Z34sOURjHP+wiqy2vQuJmy4+b5VK0ruSWLVxRyqUrpYSkVlJCLtgLi/YPUJRiSy9ly6/Nqt2oLbyRwlpxIVmLfY8Oz3s6xsy845R9n9F869v7TueZM59vM+97zpwDhQoVKpRHzQZOAMNABegHzgBbgFKj4fjFYFm6ha0irMeF3ekkYBL8HbgLdAEdQHPMhRYBncAR4CJQBm4BgxHflLZLUtcL9ACngGPAIWCf+Ki0DwpDEp+9AU7DKYU1fwJ2A9PlnFZgFzAAVDOc/6885Ae5V6f4GbBSamcBe4H3DYQ3nu/4QXpSCkfk0bFqz3j3ptJn/SA7EoreAIulZgPwUQG4idiyOy1PKFov7euALwqgTYwtu9O0hB/sMqANGFUAbGJcFXan5oTCCWBcAbBJcVN0HDA59QI/yFoFQKFe4wfZpgAo1Jbd6aACoFAf8IOcVwAUajuYO5UVAIX6uh9kSAFQqB/6QSoKgEL91A/yTgFQqN/6QbTOo0wGf/4vg7xSABTq536QBwqAQm1ftZ0uKAAK9RU/yE4FQKE+5weZX2fJRdskcbt3vJ+IriqANBk8T3hfy7FduPtN7Tm5K5uFt0uOVxGjwwpATR3fFtY5wAugJS5Ik8wmTU5epjriQiyVT5vwhgJYk+LRtMV1O7Dske8z5BmcVABtsqww1lSSH/qkhKmtFXUqADYJtqyro0G2Ror6gIXACgXAJsUD3u7AT/XGFI3nZFa80Q/ySAFQqO2mkdNLBUChtq/pTtcyLBZXZDutT+rLskFkt8aeSPsY8EHWjJP6mpCaMTlnRPqw/Vlflv77ZYOp+jez3zbprNb4FXgMnAY2yTZbiFrkH7GUNAJnUKswdAvTN4/zvrD/IXvBJdEVbmWaKfBzGw1SqFAhpl4/AG1GYcSx2G9oAAAAAElFTkSuQmCC">Almohada</button></li>
         </ul>
     </article>
     <main>
-        <label for="opcion">Opciones: </label> <br>
-        <section>
-            <label>
-                <input type="radio" id="opcion1" name="opcion" value="opcion1">
-                Opción 1
-            </label>
-            <br>
-            <label>
-                <input type="radio" id="opcion2" name="opcion" value="opcion2">
-                Opción 2
-            </label>
-            <br>
-            <label>
-                <input type="radio" id="opcion3" name="opcion" value="opcion3">
-                Opción 3
-            </label>
-            <br>
-            <label for="inputAlto">Alto: </label><input type="number" id="inputAlto" name="alto"><br>
-            <label for="inputAncho">Ancho: </label><input type="number" id="inputAncho" name="ancho"><br>
-            <label id="labelPrecioTotal">Precio :</label>
-            <button onclick="CalcularPrecioTotal()">calcular</button>
-        </section>
-        <a href="#" class="btn-agregar">Agregar al carrito</a>
+        
     </main>
+    <button class="boton-carrito">
+            <img src="/templates/img/carrito.png" alt="Carrito">
+    </button>
     <footer>
         <h1>Footer</h1>
     </footer>

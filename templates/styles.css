@@ -7,47 +7,68 @@
 
 body {
     background-color: #a7e1c2;
+    min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    background-image: url();
 }
 
 header {
     background-color: #0e2c40;
     width:100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+    ALIGN-ITEMS: center;
 } 
 /*min-height: 5%;*/
 footer {
     background-color: #efbc75;
     display: flex;
-    margin-top: 50vh;
+    justify-self: flex-end;
     
+}
+.logo{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin:0 5%;
 }
 /* Estilos para la lista de navegación en el encabezado */
 .header-nav {
     display: flex; 
-    justify-content: space-around; 
-    align-items: center; 
-    
+     
+    align-items: center;
+
+}
+
+main {
+    flex: 1; /* Esto hace que el contenido principal se expanda para llenar el espacio disponible */
 }
 
 .header-nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-between;
     list-style: none; 
     padding: 0; 
     margin: 0; 
+     
 }
 
 .header-nav li {
     display: inline; 
     margin-right: 90px; 
-    margin-left: 90px;
+    /* margin-left: 90px; */
 }
 
 .header-nav a {
     text-decoration: none; /* Quita el subrayado del enlace */
     color: white; 
     font-size: 25px; 
+    font-weight: 545;
 }
 
 /* Sección de botones */
@@ -76,7 +97,7 @@ footer {
     padding: 0.5em 1em; 
     border-radius: 5px;
     width: 12vw; 
-    height: 10vh; 
+    height: 13vh; 
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -93,7 +114,23 @@ footer {
     height: 1000px;
     padding: 0;
 }
-
+.boton-carrito {
+    position: fixed;
+    bottom: 15%; /* Ajusta la distancia desde el borde inferior de la ventana */
+    right: 2%; /* Ajusta la distancia desde el borde derecho de la ventana */
+    z-index: 999; /* Ajusta la capa z para asegurar que esté por encima de otros elementos */
+    display: flex;
+    width: 5%;
+    height: 10%;
+    background-color: #005187;
+    border-radius: 50%;
+    border: 3px solid beige;
+    align-items: center;
+    justify-content: center;
+}
+.boton-carrito img {
+    height: 120%;
+}
 button {
     display: flex;
     background-color: #14c520;
@@ -141,6 +178,7 @@ button {
 
     .menu-btn {
         display: none; /* Ocultar el botón de menú en pantallas más grandes */
+        
     }
 
     .contenedor-modificaciones {
@@ -157,6 +195,7 @@ button {
     .header-nav .nav-list {
         display: none; 
     }
+    
 
     .boton-con-imagen {
         width: 8em; 
@@ -178,15 +217,15 @@ button {
         margin-bottom: 10px; 
     }
     .menu-btn {
-        display: flex; 
-        width: 50px; 
-        height: 50px; 
-        background-color: #005187; 
-        border-radius: 50%; 
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background-color: #005187;
+        border-radius: 50%;
         border: 3px solid beige;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
-        margin: 1%;
+        margin: 0% 16% 0 5%;
     }
     .menu-btn i {
         color: beige;
