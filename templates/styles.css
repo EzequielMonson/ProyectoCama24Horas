@@ -35,9 +35,18 @@ footer {
     width: 100px;
     margin:0 5%;
 }
+.logo{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin:0 5%;
+}
 /* Estilos para la lista de navegación en el encabezado */
 .header-nav {
     display: flex; 
+     
+    align-items: center;
+
      
     align-items: center;
 
@@ -52,9 +61,14 @@ main {
     justify-content: flex-start;
     align-items: center;
     align-content: space-between;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: space-between;
     list-style: none; 
     padding: 0; 
     margin: 0; 
+     
      
 }
 
@@ -62,12 +76,14 @@ main {
     display: inline; 
     margin-right: 90px; 
     /* margin-left: 90px; */
+    /* margin-left: 90px; */
 }
 
 .header-nav a {
     text-decoration: none; /* Quita el subrayado del enlace */
     color: white; 
     font-size: 25px; 
+    font-weight: 545;
     font-weight: 545;
 }
 
@@ -97,6 +113,7 @@ main {
     padding: 0.5em 1em; 
     border-radius: 5px;
     width: 12vw; 
+    height: 13vh; 
     height: 13vh; 
     justify-content: center;
     flex-direction: column;
@@ -179,6 +196,7 @@ button {
     .menu-btn {
         display: none; /* Ocultar el botón de menú en pantallas más grandes */
         
+        
     }
 
     .contenedor-modificaciones {
@@ -195,6 +213,7 @@ button {
     .header-nav .nav-list {
         display: none; 
     }
+    
     
 
     .boton-con-imagen {
@@ -222,9 +241,16 @@ button {
         height: 50px;
         background-color: #005187;
         border-radius: 50%;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background-color: #005187;
+        border-radius: 50%;
         border: 3px solid beige;
         align-items: center;
+        align-items: center;
         justify-content: center;
+        margin: 0% 16% 0 5%;
         margin: 0% 16% 0 5%;
     }
     .menu-btn i {
