@@ -16,16 +16,18 @@ body {
 }
 
 header {
-    background-color: #0e2c40;
+    background-color: #164564;
     width:100%;
     display: flex;
     justify-content: start;
     flex-direction: row-reverse;
-    ALIGN-ITEMS: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    /* background-image: linear-gradient(to top, white 10%, #0e2c40 90%); */
 } 
 /*min-height: 5%;*/
 footer {
-    background-color: #efbc75;
+    /* background-color: #efbc75; */
     display: flex;
     justify-self: flex-end;
     
@@ -45,18 +47,16 @@ footer {
 /* Estilos para la lista de navegación en el encabezado */
 .header-nav {
     display: flex; 
-     
     align-items: center;
-
-     
     align-items: center;
-
 }
 
 main {
     flex: 1; /* Esto hace que el contenido principal se expanda para llenar el espacio disponible */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+
 }
 
 .header-nav ul {
@@ -244,16 +244,9 @@ button {
         height: 50px;
         background-color: #005187;
         border-radius: 50%;
-        display: flex;
-        width: 50px;
-        height: 50px;
-        background-color: #005187;
-        border-radius: 50%;
         border: 3px solid beige;
-        align-items: center;
-        align-items: center;
+        align-items: center; 
         justify-content: center;
-        margin: 0% 16% 0 5%;
         margin: 0% 16% 0 5%;
     }
     .menu-btn i {
@@ -330,12 +323,12 @@ button {
         flex-wrap: wrap; /*crear nueva fila*/
         justify-content: space-around;
         flex-direction: column;
-        background-color: beige;
+        /* background-color: beige; */
     }
     .boton-con-imagen {
         flex: 1;
         display: flex;
-        background-color: beige;
+        /* background-color: beige; */
         color: black;
         font-weight: 700;
         font-size: 1em;
@@ -346,7 +339,7 @@ button {
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        border: 2px groove rgb(239, 215, 78);
+        /* border: 2px groove rgb(239, 215, 78); */
         
     }
 }
@@ -367,30 +360,33 @@ button {
 
 
 .section-contacto{
-    background-color: #cff7e1;
+    background-color: #e7eee7;
     height: 90h;        /*90 porque sino se rompia con el footer*/
     min-width: 60%;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-bottom: 50px;
-
+    /* box-shadow: 0 0 5rem rgb(194, 194, 194); */
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
+}
 form, label{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     font-weight: 600;
+
 }
 #comentario{
     resize: vertical !important;   /*hace que el textarea solo se pueda midificar de forma vertical*/
 }
 
 
-
 .tittle-sc{
     font-size: 37px;
     font-weight: 750;
     margin-bottom: 0;
+
 }
 
 input{
@@ -403,4 +399,12 @@ textarea{
 select{
     border: 0;
     height: 30px;
+}
+
+
+hr{
+    
+    border-color: black;
+    
+    margin: 1% 5% 0 5%;
 }
