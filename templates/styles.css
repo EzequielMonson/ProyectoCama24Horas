@@ -3,8 +3,8 @@
 * {
     box-sizing: border-box;
     /* border: 1px solid black; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
-
 body {
     background-color: #a7e1c2;
     
@@ -46,7 +46,8 @@ footer {
 
 main {
     flex: 1; /* Esto hace que el contenido principal se expanda para llenar el espacio disponible */
-    
+    display: flex;
+    justify-content: center;
 }
 
 .header-nav ul {
@@ -320,6 +321,14 @@ button {
         color: white;
         font-size: 25px;
     }
+    form{
+        padding: 5%;
+    }
+    .section-contacto{
+        width: 100%;
+
+        justify-content: space-between;
+    }
 
 }
 @media (max-width: 400px) {
@@ -360,4 +369,48 @@ button {
 .overlay-content {
     width: 100%;
     transition: margin-left 0.5s;
+}
+
+
+    /*_CONTACTO_*/
+
+
+
+.section-contacto{
+    background-color: #cff7e1;
+    height: 90h;        /*90 porque sino se rompia con el footer*/
+    min-width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+form, label{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-weight: 600;
+}
+#comentario{
+    resize: vertical !important;   /*hace que el textarea solo se pueda midificar de forma vertical*/
+}
+
+
+
+.tittle-sc{
+    font-size: 37px;
+    font-weight: 750;
+    margin-bottom: 0;
+}
+
+input{
+    border: 0;
+    height: 30px;
+}
+textarea{
+    border: 0;
+}
+select{
+    border: 0;
+    height: 30px;
 }

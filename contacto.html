@@ -27,20 +27,69 @@
         <div class="overlay">
             <div class="overlay-content">
                 <ul class="nav-list">
-                    <li><a href="/contacto.html">Contacto</a></li> 
-                    <li><a href="">Main</a></li>
+                    <li><a href="">Contacto</a></li> 
+                    <li><a href="/index.html">Main</a></li>
                     <li><a href="/productos.html">Productos</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-    <aside class="aside">
-        Aside
-    </aside>       
+    </div>     
     <main>
+        <section class="section-contacto">
+            <h1 class="tittle-sc">SleepCraft</h1>
+            <h2>Contacto</h2>
+            <form action="mailto:sleepcraftxxi@gmail.com">
+                <label for="contactoMotivo">MOTIVO*</label> 
+                <select name="motivo" id="motivoSelect">
+                    <option value="vacio"></option>
+                    <option value="contactoEntrega">Entrega</option>
+                    <option value="contactoFactura">Factura</option>
+                    <option value="contactoCompra">Compra</option>
+                    <option value="contacto">Garantía</option>
+                    <option value="contacto" >Otros</option>
+                </select> 
+                <br>
+
+                <label for="contactoNombre">NOMBRE*</label>
+
+                <input type="text" name="nombre" id="nombre" maxlength="25" required="true">
+                <br>
+
+                <label for="contactoApellido">APELLIDO*</label>
+
+                <input type="text" name="apellido" id="apellido" maxlength="25" required="true">
+                <br>
+
+                <label for="contactoDNI">DNI*</label>
+
+                <input type="text" name="dni" id="dni" maxlength="8" required="true">
+                <br>
+
+                <label for="contactoTelefono">TELEFONO*</label>
+
+                <input type="text" name="telefono" id="telefono" maxlength="12" >
+                <br>
+
+                <label for="contactoEmail">EMAIL*</label>
+
+                <input type="email" name="email" id="email" required="true">
+                <br>
+
+                <label for="contactoProvincia">PROVINCIA*</label>
+
+                <input type="text" name="provincia" id="provincia" required="true">
+                <br>
+
+                <label for="contactoComentario">COMENTARIO*</label>
+
+                <textarea name="comentario" id="comentario" rows="5" cols="50" required="true"></textarea>
+
+                <button>Enviar</button>
+            </form>
+        </section>
     </main>
     <footer>
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa <br> a<br>a <br>a
     </footer>
 </body>
 </html>
