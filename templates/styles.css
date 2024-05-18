@@ -18,7 +18,7 @@ body {
 header {
     background-color: #164564;
     width:100%;
-    display: flex;
+    display: flex !important;
     justify-content: start;
     flex-direction: row-reverse;
     align-items: center;
@@ -32,19 +32,39 @@ footer {
     justify-self: flex-end;
     
 }
+
+/* carrusel Main*/
+#carouselExampleCaptions{
+    display: flex;
+    /* width: 100%; */
+    height: 70%;
+    margin: 0 5% 10% 5%;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.23), 10px 0 10px rgba(0, 0, 0, 0.230);
+}
+.carousel-control-prev, .carousel-control-next{
+    display: flex;
+    align-self: center;
+}
+
+
+
+
 .logo{
     display: flex;
     height: 100px;
     width: 100px;
-    margin:0 5%;
+    /* margin:0 5%; */
+}
+a{
+    margin: 0 0 0 10%;
+    
 }
 /* Estilos para la lista de navegación en el encabezado */
 .header-nav {
     display: flex; 
     align-items: center;
-    align-items: center;
+    
 }
-
 main {
     flex: 1; /* Esto hace que el contenido principal se expanda para llenar el espacio disponible */
     display: flex;
@@ -54,32 +74,38 @@ main {
 }
 
 .header-nav ul {
-    display: flex;
+    display: flex;   /*esto creo q no hace nada */
     justify-content: flex-start;
-    align-items: center;
+    align-items: end;
     align-content: space-between;
     list-style: none; 
-    padding: 0; 
+    
     margin: 0; 
      
 }
 
 .header-nav li {
     display: inline; 
-    margin-right: 90px; 
-    /* margin-left: 90px; */
+    /* margin-right: 40px;    CAMBIOS ACA */
+    margin-left: 40px;  
 }
 
 .header-nav a {
-    text-decoration: none; /* Quita el subrayado del enlace */
+    text-decoration: none !important; /* Quita el subrayado del enlace */
     color: white; 
-    font-size: 25px; 
+    font-size: 18px;  /*cambio*/
     font-weight: 545;
 }
+a:hover {
+    color: inherit !important; /* Mantiene el color original del elemento */
+    text-decoration: none !important; /* Opcional: elimina el subrayado al pasar el mouse */
+    color: white !important;
+}
+
 
 /* Sección de botones */
 .botones {
-    background-color: #1a4a5a;
+    background-color: #1a4a5abb;
     margin: 0;
 }
 
@@ -91,12 +117,12 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-    background-color: #1a4a5a;
+    background-color: #1a4a5a46;
 }
 .boton-con-imagen {
     flex: 1;
     display: flex;
-    background-color: #148d8d;
+    background-color: #16456448;
     color: black;
     font-weight: 700;
     font-size: 1em;
@@ -218,11 +244,12 @@ button {
         display: flex; /* Mostrar la lista de navegación en pantallas más grandes */
         padding: 1%;
     }
-
+   
     .menu-btn {
         display: none; /* Ocultar el botón de menú en pantallas más grandes */
         
     }
+
 
     .contenedor-modificaciones {
         display: flex; /* Mostrar el contenedor de modificaciones en pantallas más grandes */
@@ -238,8 +265,9 @@ button {
     .header-nav .nav-list {
         display: none; 
     }
-    
-
+    #carouselExampleCaptions{
+        margin: 0;
+    }
     .boton-con-imagen {
         width: 8em; 
         height: 9em; 
@@ -413,6 +441,7 @@ form, label{
 input{
     border: 0;
     height: 30px;
+    
 }
 textarea{
     border: 0;
