@@ -6,7 +6,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 body {
-    background-color: #a7e1c2 !important;
+    background-color: #5e9393 !important;
     
     min-height: 100vh;
     margin: 0;
@@ -331,7 +331,16 @@ button {
         overflow-x: hidden;
         transition: 0.5s;
     }
+     /* Cards */
 
+    .card{
+        width: 90% !important;
+    }
+    .content-cards{
+        flex-direction: column;
+        align-items: center; 
+        align-content: space-between;
+    }
     /* Estilos para el contenido del contenedor transparente */
     .overlay-content {
         position: relative;
@@ -391,6 +400,14 @@ button {
         /* border: 2px groove rgb(239, 215, 78); */
         
     }
+    .card{
+        width: 100% !important;
+    }
+    .content-cards{
+        flex-direction: column;
+        align-items: center; 
+        align-content: space-around;
+    }
 }
 /* Estilos para el contenedor de navegación transparente cuando está abierto */
 .overlay.active {
@@ -403,7 +420,69 @@ button {
     transition: margin-left 0.5s;
 }
 
+/* Cards */
+.cards-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to top, #d2f0e0 1%, #5e9393 99%);
+}
 
+.content-cards{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+.card{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #16456448 !important;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
+    transform: scale(1);
+    transition: transform 0.6s;
+    
+}
+
+.card:hover{
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 2% 0; /* Añade margen para separar la imagen del texto */
+}
+
+.card p{
+    font-weight: 300;
+    font-size: 25px;
+    
+    color: white !important;
+}
+.titulo-card{
+    color: white;
+}
+.button-card{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #164564;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    color: #fff;
+}     
     /*_CONTACTO_*/
 
 
@@ -457,4 +536,10 @@ hr{
     border-color: black;
     
     margin: 1% 5% 0 5%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
