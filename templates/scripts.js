@@ -25,13 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var cerrarCarritoBtn = document.querySelector('.cerrar-carrito');
     carritoBtn.addEventListener('click', function() {
         carritoOverlay.classList.toggle('active');
-        
         mostrarProductosEnCarrito();
     });
     cerrarCarritoBtn.addEventListener('click', function() {
         carritoOverlay.classList.remove('active');
-        
-        
     });
     // Cerrar el carrito al hacer clic fuera del contenido del carrito
     carritoOverlay.addEventListener('click', function(event) {
@@ -45,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var btnAgregarOpcionesAlmohada = document.getElementById("agregarOpcionesAlmohada");
     var btnAgregarOpcionesColchon = document.getElementById("agregarOpcionesColchon");
 
-    function agregarOpciones(tipo, opciones) {
+    function agregarOpciones(tipo, opciones, medidasPrecios) {
         var codigoHTML = `
         <label for="opcion">${tipo}: </label> <br>`;
         
@@ -57,127 +54,175 @@ document.addEventListener('DOMContentLoaded', function() {
             </label>
             <br>`;
         });
+
+        // Tabla de medidas
         codigoHTML += `
-        <label for="inputAlto">Alto: </label>
-        <input type="number" id="inputAlto" name="alto"><br>
-        <label for="inputAncho">Ancho: </label>
-        <input type="number" id="inputAncho" name="ancho"><br>
+        <table id="tablaMedidas">
+            <thead>
+                <tr>
+                    <th>Tamaños</th>
+                    <th>Medidas (cm)</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        
+        medidasPrecios.forEach(function(item) {
+            codigoHTML += `
+            <tr>
+                <td><button data-dimensiones="${item.dimensiones}" data-precio="${item.precio}">${item.tamano}</button></td>
+                <td>${item.dimensiones.replace('x', ' x ')}</td>
+                <td>$${item.precio.toLocaleString()}</td>
+            </tr>`;
+        });
+
+        codigoHTML += `
+            </tbody>
+        </table>
         <label id="labelPrecioTotal">Precio :</label>
         <button onclick="agregarAlCarrito('${tipo}')">Agregar al carrito</button>
         `;
         elementoMain.innerHTML = codigoHTML;
+
+        // Agregar eventos a los botones de la tabla
+        var botonesTabla = document.querySelectorAll('#tablaMedidas button');
+        botonesTabla.forEach(function(boton) {
+            boton.addEventListener('click', function() {
+                var dimensiones = boton.getAttribute('data-dimensiones').split('x');
+                var precio = boton.getAttribute('data-precio');
+                boton.setAttribute('data-alto', dimensiones[0]);
+                boton.setAttribute('data-ancho', dimensiones[1]);
+                boton.setAttribute('data-profundo', 200); // Assuming a default depth of 200
+                boton.setAttribute('data-precio', precio);
+            });
+        });
     }
+    
     btnAgregarOpcionesCama.addEventListener("click", function() {
         var tipo = "Tipos de maderas";
         var opciones = ["Pino", "Abeto", "Roble"];
-        agregarOpciones(tipo, opciones);
+        var medidasPrecios = [
+            {tamano: "1 plaza", dimensiones: "80x190", precio: 180000},
+            {tamano: "1 y 1/2 plaza", dimensiones: "100x190", precio: 323000},
+            {tamano: "2 plazas", dimensiones: "140x190", precio: 452200},
+            {tamano: "Queen", dimensiones: "160x200", precio: 544000},
+            {tamano: "King", dimensiones: "180x200", precio: 612000},
+            {tamano: "Superking", dimensiones: "200x200", precio: 964000}
+        ];
+        agregarOpciones(tipo, opciones, medidasPrecios);
     });
+    
     btnAgregarOpcionesAlmohada.addEventListener("click", function() {
         var tipo = "Estilos de almohada";
         var opciones = ["Almohada de plumas", "Almohada de espuma viscoelástica", "Almohada de látex"];
-        agregarOpciones(tipo, opciones);
+        var medidasPrecios = [
+            {tamano: "Pequeña", dimensiones: "50x70", precio: 50000},
+            {tamano: "Mediana", dimensiones: "60x80", precio: 70000},
+            {tamano: "Grande", dimensiones: "70x90", precio: 90000}
+        ];
+        agregarOpciones(tipo, opciones, medidasPrecios);
     });
+
     btnAgregarOpcionesColchon.addEventListener("click", function() {
         var tipo = "Diseños de colchón";
         var opciones = ["Colchón ortopédico", "Colchón de espuma", "Colchón de muelles"];
-        agregarOpciones(tipo, opciones);
+        var medidasPrecios = [
+            {tamano: "1 plaza", dimensiones: "80x190", precio: 250000},
+            {tamano: "1 y 1/2 plaza", dimensiones: "100x190", precio: 350000},
+            {tamano: "2 plazas", dimensiones: "140x190", precio: 480000},
+            {tamano: "Queen", dimensiones: "160x200", precio: 600000},
+            {tamano: "King", dimensiones: "180x200", precio: 750000},
+            {tamano: "Superking", dimensiones: "200x200", precio: 1000000}
+        ];
+        agregarOpciones(tipo, opciones, medidasPrecios);
     });
-    
 });
-// Creacion de la lista de produtos "Carrito"
+
+// Creacion de la lista de productos "Carrito"
 var carrito = [];
+
 // Definición de la clase producto (padre)
 class Producto {
-    constructor(alto, ancho, profundo, tipoMaterial, precioPorMetroCuadrado) {
+    constructor(alto, ancho, tipoMaterial) {
         this.alto = alto;
         this.ancho = ancho;
-        this.profundo = profundo;
         this.tipoMaterial = tipoMaterial;
-        this.precioPorMetroCuadrado = precioPorMetroCuadrado; // Ahora incluye el precio por metro cuadrado
+        this.precio = 0;
     }
     obtenerMedidas() {
-        return `Alto: ${this.alto} Ancho: ${this.ancho} Profundo: ${this.profundo}`;
+        return `Alto: ${this.alto} Ancho: ${this.ancho}`;
     }
-    cambiarMedidas(alto, ancho, profundo) {
+    cambiarMedidas(alto, ancho) {
         this.alto = alto;
         this.ancho = ancho;
-        this.profundo = profundo;
     }
 }
 
 // Clase Colchón que hereda de producto (hijo)
 class Colchon extends Producto {
-    constructor(tipoMaterial, alto = 30, ancho = 175, profundo = 200) {
-        super(alto, ancho, profundo, tipoMaterial);
-        this.precioPorMetroCuadrado = 20;
+    constructor(tipoMaterial, alto, ancho) {
+        super(alto, ancho, tipoMaterial);
     }
     // Método para obtener información del colchón
     obtenerInformacion() {
-        return `Colchón - ${this.obtenerMedidas()} Estilo: ${this.tipoMaterial} - Precio: $${obtenerPrecio(this.precioPorMetroCuadrado)}`;
+        return `Colchón - ${this.obtenerMedidas()} Estilo: ${this.tipoMaterial} - Precio: $${this.precio}`;
     }
 }
+
 class Cama extends Producto {
-    constructor(tipoMaterial, alto = 30, ancho = 175, profundo = 200, precioPorMetroCuadrado) {
-        super(alto, ancho, profundo, tipoMaterial, precioPorMetroCuadrado);
+    constructor(tipoMaterial, alto, ancho) {
+        super(alto, ancho, tipoMaterial);
     }
     obtenerInformacion() {
-        return `Cama - ${this.obtenerMedidas()} Material: ${this.tipoMaterial} - Precio: $${obtenerPrecio(this.precioPorMetroCuadrado)}`;
+        return `Cama - ${this.obtenerMedidas()} Material: ${this.tipoMaterial} - Precio: $${this.precio}`;
     }
 }
+
 class Almohada extends Producto {
-    constructor(tipoMaterial, alto, ancho, profundo){
-        super(alto, ancho, profundo, tipoMaterial)
+    constructor(tipoMaterial, alto, ancho){
+        super(alto, ancho, tipoMaterial);
         this.precioPorMetroCuadrado = 5;
     }
     obtenerInformacion() {
-        return `Almohada - ${this.obtenerMedidas()} Diseño: ${this.tipoMaterial} - Precio:$${obtenerPrecio(this.precioPorMetroCuadrado)}`;
+        return `Almohada - ${this.obtenerMedidas()} Diseño: ${this.tipoMaterial} - Precio: $${this.precio}`;
     }
-}
-// Función para obtener el precio total de un producto
-function obtenerPrecio(precioPorMetroCuadrado) {
-    let precioFinal = CalcularPrecioTotal(precioPorMetroCuadrado);
-    return precioFinal;
-}
-// Función para calcular el precio total
-function CalcularPrecioTotal(precioPorMetroCuadrado) {
-    let PRECIO_TOTAL = 50; // Precio total hardcodeado
-    let alto = parseFloat(document.getElementById("inputAlto").value);
-    let ancho = parseFloat(document.getElementById("inputAncho").value);
-    if (isNaN(alto) || isNaN(ancho)) {
-        alert('Por favor, introduce números válidos en los campos.');
-        return;
-    }
-    let area = alto * ancho;
-    let precioTotal = area * precioPorMetroCuadrado;
-    alert(precioTotal.toFixed(2));
-    let label = document.getElementById("labelPrecioTotal");
-    label.innerText = "Precio: $" + precioTotal.toFixed(2);
-    return precioTotal;
 }
 function agregarAlCarrito(tipo) {
     let tipoMaterial = document.querySelector('input[name="opcion"]:checked').value;
-    let alto = parseFloat(document.getElementById("inputAlto").value);
-    let ancho = parseFloat(document.getElementById("inputAncho").value);
-    if (isNaN(alto) || isNaN(ancho)) {
-        alert('Por favor, introduce números válidos en los campos.');
+    
+    // Obtener valores del botón seleccionado
+    var botonSeleccionado = document.querySelector('#tablaMedidas button[data-alto][data-ancho]');
+
+    if (!botonSeleccionado) {
+        alert('Por favor, selecciona un tamaño de la tabla.');
         return;
     }
+    
+    let tamano = botonSeleccionado.textContent.trim();
+    let dimensiones = botonSeleccionado.getAttribute('data-dimensiones');
+    let [alto, ancho] = dimensiones.split('x').map(parseFloat); // Dividir y convertir las dimensiones a números
+
     let producto;
-    let precioPorMetroCuadrado;
     if (tipo === "Tipos de maderas") {
-        precioPorMetroCuadrado = 40; // Precio por metro cuadrado para cama
-        producto = new Cama(tipoMaterial, alto, ancho, 200, precioPorMetroCuadrado);
+        producto = new Cama(tipoMaterial, alto, ancho);
     } else if (tipo === "Estilos de almohada") {
-        precioPorMetroCuadrado = 5; // Precio por metro cuadrado para almohada
-        producto = new Almohada(tipoMaterial, alto, ancho, 20, precioPorMetroCuadrado);
+        producto = new Almohada(tipoMaterial, alto, ancho);
     } else if (tipo === "Diseños de colchón") {
-        precioPorMetroCuadrado = 20; // Precio por metro cuadrado para colchón
-        producto = new Colchon(tipoMaterial, alto, ancho, 200, precioPorMetroCuadrado);
+        producto = new Colchon(tipoMaterial, alto, ancho);
     }
-    carrito.push(producto);
+
+    producto.precio = parseFloat(botonSeleccionado.getAttribute('data-precio'));
+    
+    carrito.push(producto); // Agregar la nueva instancia al carrito
+    mostrarProductosEnCarrito(); // Actualizar la lista de productos en el carrito
     alert('Producto agregado al carrito');
 }
 
+
+
+
+
+    
 function quitarDelCarrito(productoSeleccionado) {
     const index = carrito.indexOf(productoSeleccionado);
     if (index > -1) {
@@ -186,15 +231,15 @@ function quitarDelCarrito(productoSeleccionado) {
     } else {
         alert('Producto no encontrado en el carrito');
     }
-}
+    }
+    
 function mostrarProductosEnCarrito() {
     var listaProductos = document.querySelector('.overlay-carrito-content ul');
     listaProductos.innerHTML = ''; // Limpiar la lista antes de agregar los productos
 
     carrito.forEach(function(producto) {
         var li = document.createElement('li');
-        var precioTotalProducto = CalcularPrecioTotal(producto.precioPorMetroCuadrado); // Calcular el precio total del producto
-        li.textContent = `${producto.obtenerInformacion()} - Precio: $${precioTotalProducto.toFixed(2)}`; // Mostrar el precio total del producto
+        li.textContent = producto.obtenerInformacion();
 
         var btnQuitar = document.createElement('button');
         btnQuitar.textContent = 'Quitar';
