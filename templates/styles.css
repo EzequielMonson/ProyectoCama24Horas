@@ -23,7 +23,6 @@ header {
     flex-direction: row-reverse;
     align-items: center;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    /* background-image: linear-gradient(to top, white 10%, #0e2c40 90%); */
 } 
 /*min-height: 5%;*/
 footer {
@@ -153,16 +152,21 @@ a:hover {
 }
 button {
     display: flex;
-    background-color: #14c520;
+    background-color: #3b94cf;
     color: white;
     font-weight: 700;
     padding: 0.5em 1em; 
-    border-radius: 5px;
-    width: 18em; 
-    height: 4em; 
+    border-radius: 0;
+    border: 0;
+    
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+.boton-contactos{
+    height: 4rem;
+    margin-top: 8%;
+    box-shadow: 0 0 4px #00385e;
 }
 /*seccion carrito */
 .boton-carrito {
@@ -258,6 +262,8 @@ button {
     .btn-agregar {
         display: none; /* Ocultar el botón "Agregar al carrito" en pantallas más grandes */
     }
+
+
 }
 
 /* Para pantallas más pequeñas */
@@ -332,7 +338,9 @@ button {
         transition: 0.5s;
     }
      /* Cards */
-
+    .titulo-card{
+        margin-top: 7%;
+    }
     .card{
         width: 90% !important;
     }
@@ -370,7 +378,12 @@ button {
 
         justify-content: space-between;
     }
-
+    .footer{
+        flex-wrap: wrap;
+    }
+    .footer-contenedor-siguenos{
+        margin-bottom: 5%;
+    }
 }
 @media (max-width: 400px) {
     .botones ul {
@@ -400,6 +413,9 @@ button {
         /* border: 2px groove rgb(239, 215, 78); */
         
     }
+    .titulo-card{
+        margin-top: 7%;
+    }
     .card{
         width: 100% !important;
     }
@@ -407,6 +423,13 @@ button {
         flex-direction: column;
         align-items: center; 
         align-content: space-around;
+    }
+    
+    .footer{
+        flex-wrap: wrap;
+    }
+    .footer-contenedor-siguenos{
+        margin-bottom: 5%;
     }
 }
 /* Estilos para el contenedor de navegación transparente cuando está abierto */
@@ -433,6 +456,7 @@ button {
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: nowrap;
+    margin-bottom: 5%;
 }
 
 .card{
@@ -542,4 +566,20 @@ hr{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.a-footer{
+    color: white;
+    text-decoration: underline;
+}
+
+/* Etiqueta del header que dice sleepcraft */
+.a-header{
+    position: absolute;
+    right: 0;
+    margin-right: 7%;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
 }
