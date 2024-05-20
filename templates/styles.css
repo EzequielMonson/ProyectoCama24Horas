@@ -6,8 +6,8 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 body {
-    background-color: #5e9393 !important;
-    
+    /* background-color: #5e9393 !important; */
+    background-image: linear-gradient(to top, #d2f0e0 1%, #5e9393 99%) !important;
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -29,10 +29,16 @@ footer {
     /* background-color: #efbc75; */
     display: flex;
     justify-self: flex-end;
-    
+    background-color: #306b6b !important;
 }
-
+h2 {
+    margin-top: 10% !important;
+}
 /* carrusel Main*/
+.seccion-carousel{
+    background-color:#5e9393 ;
+    margin: 0;
+}
 #carouselExampleCaptions{
     display: flex;
     /* width: 100%; */
@@ -175,7 +181,7 @@ button {
     right: 2%; /* Ajusta la distancia desde el borde derecho de la ventana */
     z-index: 999; /* Ajusta la capa z para asegurar que esté por encima de otros elementos */
     display: flex;
-    width: 5%;
+    width: 7%;
     height: 10%;
     background-color: #005187;
     border-radius: 50%;
@@ -184,15 +190,15 @@ button {
     justify-content: center;
 }
 .boton-carrito img {
-    height: 120%;
+    height: 130%;
 }
 .overlay-carrito {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 40%;
+    width: auto;
     height: 100%;
-    background: rgba(239, 188, 117, 0.456);
+    background: rgba(255, 255, 255, 0.456);
     transition: right 0.3s ease;
     z-index: 999;
     color: #fff;
@@ -207,6 +213,8 @@ button {
     display: flex;
     flex-direction: column;
     height: 100%;
+    color:black;
+    font-weight: 500;
 }
 
 .carrito-lista {
@@ -224,18 +232,201 @@ button {
 }
 
 
-/* Sección de opciones y medidas */
-.contenedor-modificaciones {
-    background-color: #b3e5fc;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .item section {
     background-color: #81d4fa;
     padding: 20px;
     margin: 10px;
     box-sizing: border-box;
+}
+/* Estilos para el contenedor de navegación transparente cuando está abierto */
+.overlay.active {
+    width: 50%;
+}
+
+/* Estilos para la animación de desplazamiento del contenedor transparente */
+.overlay-content {
+    width: 100%;
+    transition: margin-left 0.5s;
+}
+
+/* Cards */
+.cards-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to top, #d2f0e0 1%, #5e9393 99%);
+}
+
+.content-cards{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    margin-bottom: 5%;
+}
+
+.card{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #16456448 !important;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
+    transform: scale(1);
+    transition: transform 0.6s;
+    
+}
+
+.card:hover{
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 2% 0; /* Añade margen para separar la imagen del texto */
+}
+
+.card p{
+    font-weight: 300;
+    font-size: 25px;
+    
+    color: white !important;
+}
+.titulo-card{
+    color: white;
+    margin-top: 2%;
+}
+.button-card{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #164564;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    color: #fff;
+}     
+    /*_CONTACTO_*/
+
+
+
+.section-contacto{
+    background-color: #e7eee7;
+    height: 90h;        /*90 porque sino se rompia con el footer*/
+    min-width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    /* box-shadow: 0 0 5rem rgb(194, 194, 194); */
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
+}
+form, label{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-weight: 600;
+
+}
+#comentario{
+    resize: vertical !important;   /*hace que el textarea solo se pueda midificar de forma vertical*/
+}
+
+
+.tittle-sc{
+    font-size: 37px;
+    font-weight: 750;
+    margin-bottom: 0;
+
+}
+
+input{
+    border: 0;
+    height: 30px;
+    
+}
+textarea{
+    border: 0;
+}
+select{
+    border: 0;
+    height: 30px;
+}
+
+
+hr{
+    position: relative;
+    margin: 1% 5%-2% 5% !important;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.319) !important;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.a-footer{
+    color: white;
+    text-decoration: underline;
+}
+
+/* Etiqueta del header que dice sleepcraft */
+.a-header{
+    position: absolute;
+    right: 0;
+    margin-right: 7%;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/*Estilos productos*/
+
+#main-productos{
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-content: normal;
+    
+
+}
+.opciones-tipo{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    
+}
+.contenedor-modificaciones{
+    margin: 10% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content:space-around;
+    flex-direction: row;
+    background-color: #16456400;
+    font-size: x-large;
+}
+.instrucciones{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 5% 0;
+    font-size: x-large;
 }
 /* Para pantallas más grandes */
 @media (min-width: 769px) {
@@ -297,11 +488,9 @@ button {
         display: flex;
         width: 50px;
         height: 50px;
-        background-color: #005187;
         border-radius: 50%;
         border: 3px solid beige;
         align-items: center;
-        align-items: center; 
         justify-content: center;
         margin: 0% 16% 0 5%;
     }
@@ -384,6 +573,17 @@ button {
     .footer-contenedor-siguenos{
         margin-bottom: 5%;
     }
+    .boton-carrito {
+        width: auto;
+        bottom: 2%;
+        right:2%;
+    }
+    .boton-carrito img {
+        height: 140%;
+    }
+    .overlay-carrito{
+        right: -150%;
+    }
 }
 @media (max-width: 400px) {
     .botones ul {
@@ -413,6 +613,9 @@ button {
         /* border: 2px groove rgb(239, 215, 78); */
         
     }
+    .a-header{
+        display: none;
+    }
     .titulo-card{
         margin-top: 7%;
     }
@@ -431,155 +634,10 @@ button {
     .footer-contenedor-siguenos{
         margin-bottom: 5%;
     }
-}
-/* Estilos para el contenedor de navegación transparente cuando está abierto */
-.overlay.active {
-    width: 50%;
-}
-
-/* Estilos para la animación de desplazamiento del contenedor transparente */
-.overlay-content {
-    width: 100%;
-    transition: margin-left 0.5s;
-}
-
-/* Cards */
-.cards-contenedor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(to top, #d2f0e0 1%, #5e9393 99%);
-}
-
-.content-cards{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    margin-bottom: 5%;
-}
-
-.card{
-    display: flex;
-    width: 30%;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    padding: 20px;
-    background-color: #16456448 !important;
-    box-sizing: border-box;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
-    transform: scale(1);
-    transition: transform 0.6s;
-    
-}
-
-.card:hover{
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    transform: scale(1.03);
-    cursor: pointer;
-}
-
-.card img {
-    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 2% 0; /* Añade margen para separar la imagen del texto */
-}
-
-.card p{
-    font-weight: 300;
-    font-size: 25px;
-    
-    color: white !important;
-}
-.titulo-card{
-    color: white;
-}
-.button-card{
-    display: inline-block;
-    text-decoration: none;
-    background-color: #164564;
-    font-size: 20px;
-    line-height: 50px;
-    text-align: center;
-    width: 100px;
-    height: 50px;
-    border-radius: 8px;
-    color: #fff;
-}     
-    /*_CONTACTO_*/
-
-
-
-.section-contacto{
-    background-color: #e7eee7;
-    height: 90h;        /*90 porque sino se rompia con el footer*/
-    min-width: 60%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 50px;
-    /* box-shadow: 0 0 5rem rgb(194, 194, 194); */
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
-}
-form, label{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    font-weight: 600;
-
-}
-#comentario{
-    resize: vertical !important;   /*hace que el textarea solo se pueda midificar de forma vertical*/
-}
-
-
-.tittle-sc{
-    font-size: 37px;
-    font-weight: 750;
-    margin-bottom: 0;
-
-}
-
-input{
-    border: 0;
-    height: 30px;
-    
-}
-textarea{
-    border: 0;
-}
-select{
-    border: 0;
-    height: 30px;
-}
-
-
-hr{
-    
-    border-color: black;
-    
-    margin: 1% 5% 0 5%;
-}
-
-.footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.a-footer{
-    color: white;
-    text-decoration: underline;
-}
-
-/* Etiqueta del header que dice sleepcraft */
-.a-header{
-    position: absolute;
-    right: 0;
-    margin-right: 7%;
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: underline;
+    .overlay-carrito{
+        right: -150%;
+    }
+    .instrucciones{
+        font-size: large;
+    }
 }

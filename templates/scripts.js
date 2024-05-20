@@ -44,19 +44,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function agregarOpciones(tipo, opciones, medidasPrecios) {
         var codigoHTML = `
+        <section class="contenedor-modificaciones">
+        <section class="opciones-tipo">
         <label for="opcion">${tipo}: </label> <br>`;
         
         opciones.forEach(function(opcion, index) {
             codigoHTML += `
             <label>
-                <input type="radio" id="opcion${index + 1}" name="opcion" value="${opcion}">
+                <input class="radio-tipos" type="radio" id="opcion${index + 1}" name="opcion" value="${opcion}">
                 ${opcion}
             </label>
-            <br>`;
+            <br>
+    
+            `;
         });
 
         // Tabla de medidas
         codigoHTML += `
+        </section>
         <table id="tablaMedidas">
             <thead>
                 <tr>
@@ -70,17 +75,18 @@ document.addEventListener('DOMContentLoaded', function() {
         medidasPrecios.forEach(function(item) {
             codigoHTML += `
             <tr>
-                <td><button data-dimensiones="${item.dimensiones}" data-precio="${item.precio}">${item.tamano}</button></td>
+                <td><button class="boton-tabla" data-dimensiones="${item.dimensiones}" data-precio="${item.precio}">${item.tamano}</button></td>
                 <td>${item.dimensiones.replace('x', ' x ')}</td>
                 <td>$${item.precio.toLocaleString()}</td>
             </tr>`;
         });
-
+        
         codigoHTML += `
             </tbody>
         </table>
         <label id="labelPrecioTotal">Precio :</label>
-        <button onclick="agregarAlCarrito('${tipo}')">Agregar al carrito</button>
+        <button id="btn-agregar-carrito"onclick="agregarAlCarrito('${tipo}')">Agregar al carrito</button>
+        </article>
         `;
         elementoMain.innerHTML = codigoHTML;
 
