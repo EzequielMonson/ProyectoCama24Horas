@@ -122,13 +122,12 @@ a:hover {
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-    background-color: #1a4a5a46;
+    background-color: #1a4a5a00;
 }
 .boton-con-imagen {
     flex: 1;
     display: flex;
     background-color: #16456448;
-    color: black;
     font-weight: 700;
     font-size: 1em;
     padding: 0.5em 1em; 
@@ -164,16 +163,26 @@ button {
     padding: 0.5em 1em; 
     border-radius: 0;
     border: 0;
-    
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    cursor: pointer;
 }
 .boton-contactos{
     height: 4rem;
     margin-top: 8%;
     box-shadow: 0 0 4px #00385e;
 }
+#btn-agregar-carrito{
+    max-width: 150px;
+    max-height: 70px;
+    min-height: 60px;
+    margin: 7%;
+}
+
+
+
 /*seccion carrito */
 .boton-carrito {
     position: fixed;
@@ -181,11 +190,11 @@ button {
     right: 2%; /* Ajusta la distancia desde el borde derecho de la ventana */
     z-index: 999; /* Ajusta la capa z para asegurar que esté por encima de otros elementos */
     display: flex;
-    width: 7%;
+    width: 5%;
     height: 10%;
-    background-color: #005187;
+    background-color: #164564;
     border-radius: 50%;
-    border: 3px solid beige;
+    border: 1.5px solid rgb(0, 0, 0);
     align-items: center;
     justify-content: center;
 }
@@ -223,7 +232,6 @@ button {
 }
 
 .cerrar-carrito {
-    background: #ff0000;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -231,6 +239,9 @@ button {
     margin-top: 20px;
 }
 
+.radio-tipos{
+    margin-left: 0;
+}
 
 
 
@@ -324,11 +335,11 @@ button {
     background-color: #e7eee7;
     height: 90h;        /*90 porque sino se rompia con el footer*/
     min-width: 60%;
+    margin-bottom: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-bottom: 50px;
-    /* box-shadow: 0 0 5rem rgb(194, 194, 194); */
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
 }
 form, label{
@@ -407,9 +418,10 @@ hr{
 .opciones-tipo{
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    /*Saque un align item*/
     flex-direction: column;
-    
+    max-width: 230px;/*agregue estas medidas*/
+    margin: 1.5%;
 }
 .contenedor-modificaciones{
     margin: 10% 0;
@@ -420,12 +432,13 @@ hr{
     flex-direction: row;
     background-color: #16456400;
     font-size: x-large;
+    margin: 0;
 }
 .instrucciones{
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin: 5% 0;
+    margin: 5% 4.3%;
     font-size: x-large;
 }
 /* Para pantallas más grandes */
@@ -489,7 +502,6 @@ hr{
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        border: 3px solid beige;
         align-items: center;
         justify-content: center;
         margin: 0% 16% 0 5%;
@@ -497,6 +509,10 @@ hr{
     .menu-btn i {
         color: beige;
         
+    }
+
+    .opciones-tipo{
+        max-width: none;
     }
 
     .contenedor-modificaciones {

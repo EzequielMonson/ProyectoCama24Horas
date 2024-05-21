@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     btnAgregarOpcionesAlmohada.addEventListener("click", function() {
         var tipo = "Estilos de almohada";
-        var opciones = ["Almohada de plumas", "Almohada de espuma viscoelástica", "Almohada de látex"];
+        var opciones = ["Almohada de plumas", "Almohada de espuma\nviscoelástica", "Almohada de látex"];
         var medidasPrecios = [
             {tamano: "Pequeña", dimensiones: "50x70", precio: 50000},
             {tamano: "Mediana", dimensiones: "60x80", precio: 70000},
