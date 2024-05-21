@@ -229,6 +229,7 @@ button {
 .carrito-lista {
     flex-grow: 1;
     overflow-y: auto;
+    list-style-type: none; 
 }
 
 .cerrar-carrito {
@@ -423,6 +424,13 @@ hr{
     max-width: 230px;/*agregue estas medidas*/
     margin: 1.5%;
 }
+#opcion-tipo{
+    flex-direction: row;
+}
+.boton-seleccionado {
+    background-color: #FFD700; /* Color de fondo para el botón seleccionado */
+}
+
 .contenedor-modificaciones{
     margin: 10% 0;
     display: flex;
