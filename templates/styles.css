@@ -197,7 +197,7 @@ button {
     right: 2%; /* Ajusta la distancia desde el borde derecho de la ventana */
     z-index: 999; /* Ajusta la capa z para asegurar que esté por encima de otros elementos */
     display: flex;
-    width: 5%;
+    width: 5.25em;
     height: 10%;
     background-color: #164564;
     border-radius: 50%;
@@ -494,6 +494,7 @@ hr{
 }
 .git-icon i{
     font-size: 250%;
+    color: black;
 }
 .git-icon:visited {
     color: inherit; /* O el mismo color que usaste para enlaces normales */
@@ -661,7 +662,7 @@ hr{
         margin-bottom: 5%;
     }
     .boton-carrito {
-        width: auto;
+        width: 5.25em;
         bottom: 2%;
         right:2%;
     }
