@@ -11,6 +11,10 @@
 <body>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            var productosField = document.getElementById('productos');
+                if (productosField) {
+                    productosField.value = JSON.stringify(carrito);
+                }
             mostrarOrdenDeProductos();
         });
     </script>
