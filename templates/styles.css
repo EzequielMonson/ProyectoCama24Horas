@@ -294,11 +294,6 @@ button {
     
 }
 
-.card:hover{
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    transform: scale(1.03);
-    cursor: pointer;
-}
 
 .card img {
     max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
@@ -327,6 +322,7 @@ button {
     height: 50px;
     border-radius: 8px;
     color: #fff;
+    margin: 0 !important;
 }     
     /*_CONTACTO_*/
 
@@ -343,12 +339,12 @@ button {
     padding-bottom: 50px;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
 }
-form, label{
+form, label {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     font-weight: 600;
-
+    width: 90%;
 }
 #comentario{
     resize: vertical !important;   /*hace que el textarea solo se pueda midificar de forma vertical*/
@@ -362,10 +358,10 @@ form, label{
 
 }
 
-input{
+input {
     border: 0;
     height: 30px;
-    
+    width: 100%;
 }
 textarea{
     border: 0;
@@ -516,7 +512,7 @@ hr{
     }
     .menu-btn i {
         color: beige;
-        
+        font-size: 2.25em;
     }
 
     .opciones-tipo{
@@ -588,8 +584,14 @@ hr{
     }
     .section-contacto{
         width: 100%;
-
         justify-content: space-between;
+    }
+    form, label {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-weight: 600;
+        width: 100%;
     }
     .footer{
         flex-wrap: wrap;
