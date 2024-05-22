@@ -20,10 +20,9 @@
                 formulario.submit(); 
                     // Vaciar el carrito después de enviar el formulario
                 carrito = []; // Reiniciar el carrito a un arreglo vacío
-                mostrarProductosEnCarrito();
+                guardarCarritoEnLocalStorage();
                  // Actualizar la visualización del carrito
             } 
-            console.error('No se encontró el formulario.');
             mostrarOrdenDeProductos();
         });
     </script>
