@@ -170,19 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (btnAgregarOpcionesCama && btnAgregarOpcionesAlmohada && btnAgregarOpcionesColchon) {
         btnAgregarOpcionesCama.addEventListener("click", function() {
-            var tipo = "Diseños de colchón";
-            var opciones = ["Colchón ortopédico", "Colchón de espuma", "Colchón de muelles"];
+            var tipo = "Tipos de maderas";
+            var opciones = ["Pino", "Abeto", "Roble"];
             var medidasPrecios = [
-            {tamano: "1 plaza", dimensiones: "80x190", precio: 250000},
-            {tamano: "1 y 1/2 plaza", dimensiones: "100x190", precio: 350000},
-            {tamano: "2 plazas", dimensiones: "140x190", precio: 480000},
-            {tamano: "Queen", dimensiones: "160x200", precio: 600000},
-            {tamano: "King", dimensiones: "180x200", precio: 750000},
-            {tamano: "Superking", dimensiones: "200x200", precio: 1000000}
+                {tamano: "1 plaza", dimensiones: "80x190", precio: 180000},
+                {tamano: "1 y 1/2 plaza", dimensiones: "100x190", precio: 323000},
+                {tamano: "2 plazas", dimensiones: "140x190", precio: 452200},
+                {tamano: "Queen", dimensiones: "160x200", precio: 544000},
+                {tamano: "King", dimensiones: "180x200", precio: 612000},
+                {tamano: "Superking", dimensiones: "200x200", precio: 964000}
             ];
             agregarOpciones(tipo, opciones, medidasPrecios);
         });
-
         btnAgregarOpcionesAlmohada.addEventListener("click", function() {
             var tipo = "Estilos de almohada";
             var opciones = ["Almohada de plumas", "Almohada de espuma viscoelástica", "Almohada de látex"];
