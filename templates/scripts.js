@@ -79,7 +79,6 @@ function agregarOpciones(tipo, opciones, medidasPrecios) {
     codigoHTML += `
             </tbody>
         </table>
-        <label id="labelPrecioTotal">Precio :</label>
         <button id="btn-agregar-carrito" onclick="agregarAlCarritoYGuardar('${tipo}')">Agregar al carrito</button>
         </section>
     `;
