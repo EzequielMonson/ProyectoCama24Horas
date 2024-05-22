@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SleepCraft Contacto</title>
+    <title>SleepCraft Carrito</title>
     <link rel="stylesheet" href="/templates/styles.css">
     <script src="/templates/scripts.js"></script>
     <link rel="icon" href="/templates/img/BEDSALE.png" type="image/x-icon">
@@ -16,7 +16,7 @@
                     <img src="/templates/img/BEDSALE.png" alt="" class="logo">
                 </a>
                 <ul class="nav-list">
-                    <li><a href="">Contacto</a></li> 
+                    <li><a href="/contacto.html">Contacto</a></li> 
                     <li><a href="/index.html">Main</a></li>
                     <li><a href="/productos.html">Productos</a></li>
                 </ul>
@@ -30,30 +30,19 @@
         <div class="overlay">
             <div class="overlay-content">
                 <ul class="nav-list">
-                    <li><a href="">Contacto</a></li> 
+                    <li><a href="contacto.html">Contacto</a></li> 
                     <li><a href="/index.html">Main</a></li>
                     <li><a href="/productos.html">Productos</a></li>
                 </ul>
             </div>
         </div>
-    </div>     
+    </div>
     <main>
         <section class="section-contacto">
             <h1 class="tittle-sc">SleepCraft</h1>
-            <img src="templates/img/contacto.png" alt="icono-contacto" class="icono-secciones">
-            <h2 class="contacto">Contacto</h2>
+            <img src="templates/img/carrito-de-compras.png" alt="img-carrito" class="icono-secciones">
+            <h2 class="contacto">Sección Carrito</h2>
             <form action="mailto:sleepcraftxxi@gmail.com">
-                <label for="contactoMotivo">MOTIVO*</label> 
-                <select name="motivo" id="motivoSelect">
-                    <option value="vacio"></option>
-                    <option value="contactoEntrega">Entrega</option>
-                    <option value="contactoFactura">Factura</option>
-                    <option value="contactoCompra">Compra</option>
-                    <option value="contacto">Garantía</option>
-                    <option value="contacto" >Otros</option>
-                </select> 
-                <br>
-
                 <label for="contactoNombre">NOMBRE*</label>
 
                 <input type="text" name="nombre" id="nombre" maxlength="25" required="true">
@@ -79,16 +68,16 @@
                 <input type="email" name="email" id="email" required="true">
                 <br>
 
-                <label for="contactoProvincia">PROVINCIA*</label>
+                <label for="contactoProvincia">DIRECCIÓN*</label>
 
                 <input type="text" name="provincia" id="provincia" required="true">
                 <br>
+                
+                <section id="listado-productos">
+                    
+                </section>
 
-                <label for="contactoComentario">COMENTARIO*</label>
-
-                <textarea name="comentario" id="comentario" rows="5" cols="50" required="true"></textarea>
-
-                <button class="boton-contactos">Enviar</button>
+                <button class="boton-contactos">Comprar</button>
             </form>
         </section>
     </main>
