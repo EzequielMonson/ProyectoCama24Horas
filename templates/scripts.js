@@ -1,6 +1,6 @@
 // Función para guardar el carrito en el localStorage
 function guardarCarritoEnLocalStorage() {
-    // Convertir cada producto del carrito a un objeto plano con información adicional del tipo
+    // Convertir cada producto del carrito a un objeto con información adicional del tipo
     var carritoParaGuardar = carrito.map(function(producto) {
         return {
             tipo: producto.constructor.name, // Agregar el tipo de producto al objeto
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (comprarBtn) {
         comprarBtn.addEventListener('click', function() {
             if (carrito.length > 0) {
-                
+                //Enviar al usuario a la pagina de compra
                 window.location.href = 'compras.html';
             } else {
                 alert('El carrito está vacío. Por favor, agrega productos antes de comprar.');
@@ -208,13 +208,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
     } 
+    var formContacto = document.getElementById("formularioContacto");
+    if (formContacto){
+        formContacto.addEventListener("submit", function(event) {
+            event.preventDefault();
+        
+            // Validación de campos
+            var motivo = document.getElementById("motivoSelect").value;
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var dni = document.getElementById("dni").value;
+            var telefono = document.getElementById("telefono").value;
+            var email = document.getElementById("email").value;
+            var provincia = document.getElementById("provincia").value;
+            var comentario = document.getElementById("comentario").value;
+        
+            if (motivo === "vacio") {
+                mostrarAlerta("Por favor, seleccione un motivo.");
+                return;
+            }
+        
+            if (nombre === "") {
+                mostrarAlerta("Por favor, introduzca su nombre.");
+                return;
+            }
+        
+            if (apellido === "") {
+                mostrarAlerta("Por favor, introduzca su apellido.");
+                return;
+            }
+        
+            if (dni === "") {
+                mostrarAlerta("Por favor, introduzca su DNI.");
+                return;
+            }
+            if (provincia === "") {
+                mostrarAlerta("Por favor, introduzca su provincia.");
+                return;
+            }
+        
+            if (comentario === "") {
+                mostrarAlerta("Por favor, introduzca un comentario.");
+                return;
+            }
+            if (telefono === "") {
+                mostrarAlerta("Por favor, introduzca un telefono.");
+                return;
+            }
+            if (email === "") {
+                mostrarAlerta("Por favor, introduzca un email.");
+                return;
+            }
+            // Aquí enviarías el formulario o realizarías alguna otra acción
+            alert("Formulario enviado correctamente.");
+        });        
+    }
     // Llamada a la función para obtener el carrito desde el localStorage al cargar la página
     obtenerCarritoDesdeLocalStorage();
 });
 
 // Creacion de la lista de productos "Carrito"
 var carrito = [];
-
+function mostrarAlerta(mensaje) {
+    alert(mensaje);
+}
 // Definición de la clase producto (padre)
 class Producto {
     constructor(alto, ancho, tipoMaterial) {
@@ -317,7 +374,6 @@ function mostrarProductosEnCarrito() {
         console.error('El elemento de la lista de productos en el overlay no se encontró.');
         return;
     }
-
     // Limpiar la lista antes de agregar los productos
     listaProductos.innerHTML = '';
 
@@ -352,19 +408,11 @@ function mostrarProductosEnCarrito() {
         
     }
 }
-    
-    
-
-    
-
-
-
 // Función para agregar un producto al carrito y luego guardar el carrito en el localStorage
 function agregarAlCarritoYGuardar(tipo) {
     agregarAlCarrito(tipo);
     guardarCarritoEnLocalStorage();
 }
-
 // Función para quitar un producto del carrito y luego guardar el carrito en el localStorage
 function quitarDelCarritoYGuardar(productoSeleccionado) {
     quitarDelCarrito(productoSeleccionado);

@@ -1,4 +1,4 @@
-document.getElementById("formularioContacto").addEventListener("submit", function(event) {
+document.getElementsByClassName("formularioContacto").addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Validación de campos
@@ -11,7 +11,7 @@ document.getElementById("formularioContacto").addEventListener("submit", functio
     var provincia = document.getElementById("provincia").value;
     var comentario = document.getElementById("comentario").value;
 
-    if (motivo === "vacio") {
+    if (motivo && motivo === "vacio") {
         mostrarAlerta("Por favor, seleccione un motivo.");
         return;
     }
@@ -35,8 +35,16 @@ document.getElementById("formularioContacto").addEventListener("submit", functio
         return;
     }
 
-    if (comentario === "") {
+    if (comentario && comentario === "") {
         mostrarAlerta("Por favor, introduzca un comentario.");
+        return;
+    }
+    if (telefono === "") {
+        mostrarAlerta("Por favor, introduzca un telefono.");
+        return;
+    }
+    if (email === "") {
+        mostrarAlerta("Por favor, introduzca un email.");
         return;
     }
 
