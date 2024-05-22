@@ -506,7 +506,14 @@ hr{
 .a-integrantes{
     color: white;
 }
-
+/*Seccion compras*/
+#listado-productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex:3;
+    justify-content: space-around;
+}
 
 /* Para pantallas más grandes */
 @media (min-width: 769px) {
@@ -739,7 +746,7 @@ hr{
         margin-bottom: 5%;
     }
     .overlay-carrito{
-        right: -150%;
+        right: -250%;
     }
     .instrucciones{
         font-size: large;

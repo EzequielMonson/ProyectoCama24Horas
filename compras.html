@@ -9,6 +9,11 @@
     <link rel="icon" href="/templates/img/BEDSALE.png" type="image/x-icon">
 </head>
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarOrdenDeProductos();
+        });
+    </script>
     <div class="contenedor">
         <header class="item header">
             <nav class="header-nav">
@@ -42,7 +47,7 @@
             <h1 class="tittle-sc">SleepCraft</h1>
             <img src="templates/img/carrito-de-compras.png" alt="img-carrito" class="icono-secciones">
             <h2 class="contacto">Sección Carrito</h2>
-            <form action="mailto:sleepcraftxxi@gmail.com">
+            <form action="mailto:sleepcraft666@gmail.com" method="post" enctype="text/plain">
                 <label for="contactoNombre">NOMBRE*</label>
 
                 <input type="text" name="nombre" id="nombre" maxlength="25" required="true">
@@ -74,10 +79,9 @@
                 <br>
                 
                 <section id="listado-productos">
-                    
                 </section>
-
-                <button class="boton-contactos">Comprar</button>
+                <h1 id="precio-total"></h1>
+                <input type="submit" value="Comprar" class="boton-contactos" id="btn-comprar">
             </form>
         </section>
     </main>
@@ -98,6 +102,7 @@
             <br><br><br>
             <a href="integrantes.html" class="a-integrantes">©CopyRight Integrantes</a>
         </div>
-      </footer>
+    </footer>
+    
 </body>
 </html>
