@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (comprarBtn) {
         comprarBtn.addEventListener('click', function() {
             if (carrito.length > 0) {
+                var productosField = document.getElementById('productos');
+                if (productosField) {
+                    productosField.value = JSON.stringify(carrito);
+                }
                 window.location.href = 'compras.html';
             } else {
                 alert('El carrito está vacío. Por favor, agrega productos antes de comprar.');
