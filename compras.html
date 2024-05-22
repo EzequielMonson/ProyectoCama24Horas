@@ -15,14 +15,6 @@
                 if (productosField) {
                     productosField.value = JSON.stringify(carrito);
                 }
-            var formulario = document.querySelector('form');
-            if (formulario) {
-                formulario.submit(); 
-                    // Vaciar el carrito después de enviar el formulario
-                carrito = []; // Reiniciar el carrito a un arreglo vacío
-                guardarCarritoEnLocalStorage();
-                 // Actualizar la visualización del carrito
-            } 
             mostrarOrdenDeProductos();
         });
     </script>
@@ -116,6 +108,18 @@
             <a href="integrantes.html" class="a-integrantes">©CopyRight Integrantes</a>
         </div>
     </footer>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btnComprar = document.querySelector('btn-comprar');
+            if (btnComprar){
+                comprarBtn.addEventListener('click', function() {
+                    // Vaciar el carrito después de enviar el formulario
+                    carrito = []; // Reiniciar el carrito a un arreglo vacío
+                    // Actualizar la visualización del carrito
+                    guardarCarritoEnLocalStorage();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
