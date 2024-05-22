@@ -725,6 +725,12 @@ hr{
         align-content: space-around;
     }
     
+    form, select {
+        width: 100%;
+    }
+    form, textarea{
+        width: 100%;
+    }
     .footer{
         flex-wrap: wrap;
     }
