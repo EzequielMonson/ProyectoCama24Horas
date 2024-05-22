@@ -285,67 +285,7 @@ function agregarAlCarrito(tipo) {
     } else if (tipo === "Diseños de colchón") {
         producto = new Colchon(tipoMaterial, alto, ancho);
     }
-function agregarOpciones(tipo, opciones, medidasPrecios) {
-    var elementoMain = document.querySelector("main");
-    var codigoHTML = `
-        <section class="contenedor-modificaciones">
-        <section class="opciones-tipo">
-        <label for="opcion">${tipo}: </label> <br>`;
-        
-    opciones.forEach(function(opcion, index) {
-        codigoHTML += `
-            <label id="opcion-tipo">
-                <input class="radio-tipos" type="radio" id="opcion${index + 1}" name="opcion" value="${opcion}">
-                ${opcion}
-            </label>
-            <br>
-        `;
-    });
 
-    // Tabla de medidas
-    codigoHTML += `
-        </section>
-        <table id="tablaMedidas">
-            <thead>
-                <tr>
-                    <th>Tamaños</th>
-                    <th>Medidas (cm)</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody>`;
-    
-    medidasPrecios.forEach(function(item) {
-        codigoHTML += `
-            <tr>
-                <td><button class="boton-tabla" data-dimensiones="${item.dimensiones}" data-precio="${item.precio}">${item.tamano}</button></td>
-                <td>${item.dimensiones.replace('x', ' x ')}</td>
-                <td>$${item.precio.toLocaleString()}</td>
-            </tr>`;
-    });
-    
-    codigoHTML += `
-            </tbody>
-        </table>
-        <label id="labelPrecioTotal">Precio :</label>
-        <button id="btn-agregar-carrito" onclick="agregarAlCarritoYGuardar('${tipo}')">Agregar al carrito</button>
-        </section>
-    `;
-    elementoMain.innerHTML = codigoHTML;
-
-    // Agregar eventos a los botones de la tabla
-    var botonesTabla = document.querySelectorAll('#tablaMedidas button');
-    botonesTabla.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            // Quitar la clase 'boton-seleccionado' de todos los botones
-            botonesTabla.forEach(function(b) {
-                b.classList.remove('boton-seleccionado');
-            });
-            // Agregar la clase 'boton-seleccionado' al botón clickeado
-            boton.classList.add('boton-seleccionado');
-        });
-    });
-}
     producto.precio = parseFloat(botonSeleccionado.getAttribute('data-precio'));
     
     carrito.push(producto); // Agregar la nueva instancia al carrito
