@@ -382,12 +382,13 @@ hr{
 .footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-around;
 }
 
 .a-footer{
     color: white;
     text-decoration: underline;
+    margin: 0;
 }
 
 /* Etiqueta del header que dice sleepcraft */
@@ -655,6 +656,10 @@ hr{
         font-weight: 600;
         width: 100%;
     }
+    .section-iniciar-sesion{
+        width: 100%;
+        justify-content: space-between;
+    }
     .footer{
         flex-wrap: wrap;
     }
@@ -740,4 +745,32 @@ hr{
     .instrucciones{
         font-size: large;
     }
+}
+
+
+
+
+/*Ultimo agregado*/
+
+.section-iniciar-sesion{
+    background-color: #e7eee7;
+    height: 90h;        /*90 porque sino se rompia con el footer*/
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2), 10px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.icono-iniciar-sesion{
+    width: 12%;
+    height: 12%;
+    margin: 0;
+}
+.boton-registrarse{
+    height: 2rem;
+    margin-top: 8%;
+    background-color:  #cf3b3b;
+    box-shadow: 0 0 4px #5e0000;
 }
