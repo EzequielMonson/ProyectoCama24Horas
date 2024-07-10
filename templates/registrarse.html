@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="../static/styles.css">
     <script src="../static/scripts.js"></script>
     <link rel="icon" href="../static/img/BEDSALE.png" type="image/x-icon">
+    
+    
+
 </head>
 <body>
     <div class="contenedor">
         <header class="item header">
             <nav class="header-nav">
-                <a href="../index.html">
+                <a href="/index">
                     <img src="../static/img/BEDSALE.png" alt="" class="logo">
                 </a>
                 <ul class="nav-list">
-                    <li><a href="/templates/contacto.html">Contacto</a></li> 
-                    <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="/contacto">Contacto</a></li> 
+                    <li><a href="/index">Main</a></li>
+                    <li><a href="/productos">Productos</a></li>
                 </ul>
             </nav>
             <div class="menu-btn">
@@ -30,9 +33,9 @@
         <div class="overlay">
             <div class="overlay-content">
                 <ul class="nav-list">
-                    <li><a href="/templates/contacto.html">Contacto</a></li> 
-                    <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="/contacto">Contacto</a></li> 
+                    <li><a href="/index">Main</a></li>
+                    <li><a href="/productos">Productos</a></li>
                 </ul>
             </div>
         </div>
@@ -42,35 +45,41 @@
             <h1 class="tittle-sc">SleepCraft</h1>
             <img src="../static/img/icono-registrarse.png" alt="icono-contacto" class="icono-iniciar-sesion">
             <h2 class="contacto">Registrarse</h2>
-            <form action="mailto:sleepcraft666@gmail.com" method="post" enctype="text/plain"id="formularioContacto">
+            <form method="post" class="formularioContacto" id="signupForm">
 
-                <label for="contactoNombre">Correo electronico</label>
-
-                <input type="email" name="nombre" id="correo-electronico" maxlength="25" >
+                <label for="correo">Correo electronico</label>
+                <input type="email" name="correo" id="correo-electronico" required >
                 <br>
 
-                <label for="contactoNombre">Nombre de usuario</label>
-
-                <input type="text" name="nombre" id="correo-electronico" maxlength="25" >
+                <label for="nombre">Nombre completo</label>
+                <input type="text" name="nombre" id="nombre" required >
                 <br>
 
-                <label for="contactoApellido">Contraseña</label>
-
-                <input type="password" name="apellido" id="contraseña" maxlength="25" >
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" required >
                 <br>
 
-                <label for="contactoApellido">Confirmar contraseña</label>
-
-                <input type="password" name="apellido" id="contraseña" maxlength="25" >
+                <label for="confirmacion">Confirmar contraseña</label>
+                <input type="password" name="confirmacion" id="confirmacion" required >
                 <br>
 
-                <label for="contactoNombre">Número de teléfono</label>
-
-                <input type="text" name="nombre" id="correo-electronico" maxlength="25" >
+                <label for="ciudad">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad" required >
                 <br>
 
-                <button class="boton-registrarse">Confirmar</button>
+                <label for="Direccion">Dirección</label>
+                <input type="text" name="direccion" id="direccion" required >
+                <br>
+
+                <label for="telefono">Número de teléfono</label>
+                <input type="text" name="telefono" id="telefono" required >
+                <br>
+
+                <input type="hidden" name="tipoUsuario"id="codigoInput" value="" >
+                <button type="submit" class="boton-registrarse" id="boton-registrarse">Confirmar</button>
+                <button class="boton-registrarse" id="btnRegistrarAdmin">Habilitar Administrador</button>
             </form>
+            
         </section>
     </main>
     <hr>
@@ -88,8 +97,9 @@
             <a href="https://www.instagram.com" target="_blank" class="a-footer">Instagram</a> |
             <a href="https://www.linkedin.com" target="_blank" class="a-footer">LinkedIn</a> |
             <br><br><br>
-            <a href="/templates/integrantes.html" class="a-integrantes">©CopyRight Integrantes</a>
+            <a href="/integrantes" class="a-integrantes">©CopyRight Integrantes</a>
         </div>
-      </footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

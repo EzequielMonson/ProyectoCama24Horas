@@ -12,13 +12,13 @@
     <div class="contenedor">
         <header class="item header">
             <nav class="header-nav">
-                <a href="../index.html">
+                <a href="/index">
                     <img src="../static/img/BEDSALE.png" alt="" class="logo">
                 </a>
                 <ul class="nav-list">
-                    <li><a href="/templates/contacto.html">Contacto</a></li> 
-                    <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="/contacto">Contacto</a></li> 
+                    <li><a href="/index">Main</a></li>
+                    <li><a href="/productos">Productos</a></li>
                 </ul>
             </nav>
             <div class="menu-btn">
@@ -30,9 +30,9 @@
         <div class="overlay">
             <div class="overlay-content">
                 <ul class="nav-list">
-                    <li><a href="/templates/contacto.html">Contacto</a></li> 
-                    <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="/contacto">Contacto</a></li> 
+                    <li><a href="/index">Main</a></li>
+                    <li><a href="/productos">Productos</a></li>
                 </ul>
             </div>
         </div>
@@ -42,21 +42,17 @@
             <h1 class="tittle-sc">SleepCraft</h1>
             <img src="../static/img/icono-ingresar.png" alt="icono-contacto" class="icono-iniciar-sesion">
             <h2 class="contacto">Iniciar sesión</h2>
-            <form action="mailto:sleepcraft666@gmail.com" method="post" enctype="text/plain"id="formularioContacto">
+            <form id="loginForm" method="post">
 
-                <label for="contactoNombre">Correo electronico</label>
-
-                <input type="email" name="nombre" id="correo-electronico" maxlength="25" >
+                <label for="correo">Correo electronico</label>
+                <input type="email" name="correo" id="correo" required>
+                <br>
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" required>
                 <br>
 
-                <label for="contactoApellido">Contraseña</label>
-
-                <input type="password" name="apellido" id="contraseña" maxlength="25" >
-                <br>
-
-                <button class="boton-contactos">Ingresar</button>
-
-                <button class="boton-registrarse">Registrarse</button>
+                <button type="submit" class="boton-contactos">Ingresar</button>
+                <button class="boton-registrarse" id="boton-registrarse">Registrarse</button>
             </form>
         </section>
     </main>
@@ -75,8 +71,8 @@
             <a href="https://www.instagram.com" target="_blank" class="a-footer">Instagram</a> |
             <a href="https://www.linkedin.com" target="_blank" class="a-footer">LinkedIn</a> |
             <br><br><br>
-            <a href="/templates/integrantes.html" class="a-integrantes">©CopyRight Integrantes</a>
+            <a href="/integrantes" class="a-integrantes">©CopyRight Integrantes</a>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>

@@ -17,8 +17,7 @@ header {
     background-color: #164564;
     width:100%;
     display: flex !important;
-    justify-content: start;
-    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 10px rgb(0, 0, 0);
 } 
@@ -53,7 +52,16 @@ h2 {
     align-self: center;
 }
 
-
+#contenedor-btn-sesion {
+    display: flex;
+    align-items: center;
+}
+.btn-nav{
+    padding: 2em;
+    display: flex;
+    white-space: nowrap;
+    background-color: #306b6b !important;
+}
 
 #bi-list{
     font-size: 2.25em;
@@ -80,6 +88,73 @@ main {
     flex-wrap: wrap;
 
 }
+/* Estilos para la lista de opciones del usuario */
+.user-options {
+    display: none;
+    position: absolute;
+    top: 0.5em;
+    right: -4px;
+    width: 16em;
+    background-color: #164564;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    list-style-type: none;
+    z-index: 1;
+    padding-left: 0px;
+}
+
+.user-options.show {
+    display: block;
+}
+.user-name {
+    color: white;
+    font-size: larger;
+    font-weight: 400;
+}
+.user-options li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.user-options li:last-child {
+    border-bottom: none;
+}
+
+.user-options a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.user-options li:hover {
+    background-color: #f0f0f0;
+}
+.user-options li:hover a {
+    color: #333;
+    font-weight: 600;
+}
+
+.options-container {
+    position: relative;
+}
+
+.options-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.btn-nav {
+    background-color: #4caf50;
+    color: white;
+    padding: 2% 2%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .header-nav ul {
     display: flex;   /*esto creo q no hace nada */
@@ -89,7 +164,6 @@ main {
     list-style: none; 
     
     margin: 0; 
-     
 }
 
 .header-nav li {
@@ -393,9 +467,6 @@ hr{
 
 /* Etiqueta del header que dice sleepcraft */
 .a-header{
-    position: absolute;
-    right: 0;
-    margin-right: 7%;
     color: white;
     font-size: 22px;
     font-weight: 700;

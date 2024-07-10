@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SleepCraft Carrito</title>
+    <title>SleepCraft Productos</title>
     <link rel="stylesheet" href="../static/styles.css">
     <script src="../static/scripts.js"></script>
     <link rel="icon" href="../static/img/BEDSALE.png" type="image/x-icon">
 </head>
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var productosField = document.getElementById('productos');
-                if (productosField) {
-                    productosField.value = JSON.stringify(carrito);
-                }
-            mostrarOrdenDeProductos();
-        });
-    </script>
     <div class="contenedor">
         <header class="item header">
             <nav class="header-nav">
@@ -27,7 +18,7 @@
                 <ul class="nav-list">
                     <li><a href="/templates/contacto.html">Contacto</a></li> 
                     <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="">Productos</a></li>
                 </ul>
             </nav>
             <div class="menu-btn">
@@ -35,55 +26,34 @@
             </div>
             <a href="#foot" class="a-header">SleepCraft</a>
         </header>
-        
         <div class="overlay">
             <div class="overlay-content">
                 <ul class="nav-list">
                     <li><a href="/templates/contacto.html">Contacto</a></li> 
                     <li><a href="../index.html">Main</a></li>
-                    <li><a href="/templates/productos.html">Productos</a></li>
+                    <li><a href="">Productos</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-    <main>
-        <section class="section-contacto">
-            <h1 class="tittle-sc">SleepCraft</h1>
-            <img src="../static/img/carrito-de-compras.png" alt="img-carrito" class="icono-secciones">
-            <h2 class="contacto">Sección Carrito</h2>
-            <form method="post" enctype="text/plain" id="comprarForm">
-                <label for="contactoNombre">NOMBRE COMPLETO*</label>
+    </div>   
+    <main id="main-productos">
+        <div id="tablaPedidos"></div>
 
-                <input type="text" name="nombre" id="nombre" required="true" >
-                <br>
-
-                <label for="contactoTelefono">TELEFONO*</label>
-
-                <input type="text" name="telefono" id="telefono" required="true" >
-                <br>
-
-                <label for="contactoEmail">EMAIL*</label>
-
-                <input type="email" name="email" id="email" required="true">
-                <br>
-
-                <label for="contactoDireccion">DIRECCIÓN*</label>
-
-                <input type="text" name="direccion" id="direccion" required="true">
-                <br>
-                <label for="contactoCiudad">CIUDAD*</label>
-
-                <input type="text" name="ciudad" id="ciudad" required="true">
-                <br>
-                <input type="hidden" name="productos" id="productos" value="">
-
-                <section id="listado-productos">
-                </section>
-                <h1 id="precio-total"></h1>
-                <input type="submit" value="Comprar" class="boton-contactos" id="btn-comprar">
-            </form>
-        </section>
     </main>
+    <button class="boton-carrito">
+            <img src="../static/img/carrito.png" alt="Carrito">
+    </button>
+    <div class="overlay-carrito">
+        <div class="overlay-carrito-content">
+            <h2>Carrito de Compras</h2>
+            <ul class="carrito-lista">
+                <!-- Acá agrego los productos del carrito -->
+            </ul>
+            <h4 id="precio-total"></h1>
+            <button class="cerrar-carrito">Cerrar</button>
+            <button id="comprar-btn" class="cerrar-carrito">Comprar</button>
+        </div>
+    </div>
     <hr>
     <footer class="footer" id="foot">
         <div class="footer-contenedor-contactanos">
@@ -101,6 +71,7 @@
             <br><br><br>
             <a href="/templates/integrantes.html" class="a-integrantes">©CopyRight Integrantes</a>
         </div>
-    </footer>
+      </footer>
 </body>
+
 </html>
